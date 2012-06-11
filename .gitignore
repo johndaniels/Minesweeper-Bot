@@ -1,0 +1,7 @@
+*.exe
+*.dll
+*.suo
+*.swp
+*.csproj.user
+MinesweeperPlayer/bin/
+MinesweeperPlayer/obj/
