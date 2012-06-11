@@ -66,8 +66,8 @@ namespace MinesweeperPlayer {
 
         int GetLocationNumber(int top, int left) {
             int currentVal = 0;
-            int minDiff = 20;
-            for (int i = 1; i <= 8; i++) {
+            int minDiff = 10000;
+            for (int i = 0; i <= 8; i++) {
                 int[,] mask = NumMasks.Masks[i];
                 int diff = 0;
                 for (int x = 3; x < MIN_SQUARE_WIDTH; x++) {

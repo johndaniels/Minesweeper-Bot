@@ -5,6 +5,26 @@ using System.Text;
 
 namespace MinesweeperPlayer {
     static class NumMasks {
+        const string ZERO =
+@"000000000000000000
+000000000000000000
+000000000000000000
+000000000000000000
+000000000000000000
+000000000000000000
+000000000000000000
+000000000000000000
+000000000000000000
+000000000000000000
+000000000000000000
+000000000000000000
+000000000000000000
+000000000000000000
+000000000000000000
+000000000000000000
+000000000000000000
+000000000000000000";
+
         const string ONE =
 @"000000000000000000
 000000000000000000
@@ -165,10 +185,10 @@ namespace MinesweeperPlayer {
 000000000000000000
 000000000000000000";
 
-        public static readonly Dictionary<int, int[,]> Masks = new Dictionary<int,int[,]>();
+        public static readonly int[][,] Masks = new int[9][,];
         static NumMasks() {
             string[] masks = new string[] {
-                "",
+                ZERO,
                 ONE,
                 TWO,
                 THREE,
@@ -178,7 +198,7 @@ namespace MinesweeperPlayer {
                 SEVEN,
                 EIGHT
             };
-            for (int num = 1; num <= 8; num++) {
+            for (int num = 0; num <= 8; num++) {
                 string[] rows = (from s in masks[num].Split('\n') select s.Trim()).ToArray();
                 int[,] mask = new int[rows[0].Length, rows.Length];
                 for (int y = 0; y < rows.Length; y++) {
